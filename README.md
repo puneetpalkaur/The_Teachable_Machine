@@ -5,14 +5,17 @@
 Deep Learning Assignments
 
 ## Project 1: The Incredible Teachable Machine
+----
 
+### Demo available on YouTube: https://youtu.be/h8MURZyYB_E
+
+### Setup: 
 Go to https://github.com/cgross/generator-cg-angular to install required componets (Getting Started)
-
-#### Directory Layout
+#### Directory Layout:
 ```sh
 Flask_Main..............................Python Code goes here (backend)
-    /app.py
-    /train_predict.py
+    /app.py.............................main server file to collect images and send/receive http requests
+    /teachablemodel.py..................Keras code to train and predict
 partial.................................Contains HTML, CSS, js (UI)
     /MainPage...........................Main Page on load
         /MainPage.html..................HTML Page
