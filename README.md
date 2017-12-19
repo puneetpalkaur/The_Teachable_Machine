@@ -6,7 +6,7 @@ Deep Learning Assignments
 
 ## Project 1: The Incredible Teachable Machine
 
-### Demo available on YouTube: ##### https://youtu.be/h8MURZyYB_E
+### Demo available on YouTube: https://youtu.be/h8MURZyYB_E
 
 ### Setup: 
 Go to https://github.com/cgross/generator-cg-angular to install required componets (Getting Started)
