@@ -1,13 +1,27 @@
-<div class="col-md-12" ng-controller="MainpageCtrl">
-<div class="contentarea">
-<table >
+<div ng-controller="MainpageCtrl">
+<div class="container" style="color:gray;font-family: 'Comfortaa Regular';">
+    <h1><strong>The Incredible Teachable Machine</strong></h1>
+</div>
+<div class="container" style="background-color:none;">
+
+<table align="center">
+
   <tr>
-    <th colspan="2" style="text-align:center;">INPUT</th>
-      <th>&nbsp;</th>
-      <th>&nbsp;</th>
-      <th>&nbsp;</th>
-      <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
-    <th style="text-align:center;">OUTPUT</th>
+      <th class="container-child" style="width:10px;">INPUT</th>
+      <th>&nbsp;&nbsp;&nbsp;</th>
+      <th class="container-child">PROGRESS</th>
+      <th>&nbsp;&nbsp;&nbsp;</th>
+      <th class="container-child">TRAIN</th>
+      <th>&nbsp;&nbsp;&nbsp;</th>
+      <th class="container-child">EXAMPLE</th>
+      <th>&nbsp;&nbsp;&nbsp;</th>
+    <th class="container-child">OUTPUT</th>
+        <th>&nbsp;&nbsp;&nbsp;</th>
+
+  </tr>
+     <tr>
+    <th colspan="10">&nbsp;</th>
+
 
   </tr>
   <tr >
@@ -24,17 +38,20 @@
             </div>
       </td>
       <td> &nbsp; &nbsp;&nbsp;</td>
-    <td><button class="w3-button w3-red" ng-click="red();move('redBar');">TRAIN RED</button></td>
-      <td><div class="output">
-            <img id="Red" alt="The screen capture will appear in this box.">
-           </div></td>
+    <td><button class="w3-button w3-red " ng-click="red();move('redBar');">TRAIN RED</button></td>
+      <td> &nbsp; &nbsp;&nbsp;</td>
+      <td>
+            <div class="out">  <img id="Red"  style="height:100px;width:120px;"></div>
 
-    <td rowspan="3">
-         <div class="category" style="background-color:{{category}}">
-        {{category}}
+           </td>
+    <td></td>
+    <td >
+         <div class="category" style="background-color:{{rcategory}}">
+        {{rcategory}}
       </div>
 
     </td>
+      <td>&nbsp;&nbsp;&nbsp;</td>
   </tr>
   <tr >
       <td> &nbsp; &nbsp;&nbsp;</td>
@@ -44,10 +61,18 @@
       </td>
     <td>&nbsp;&nbsp;&nbsp; </td>
     <td><button class="w3-button w3-green" ng-click="green();move('greenBar');">TRAIN GREEN</button></td>
-    <!--<td> {{category}}</td>-->
-        <td><!--<div class="output">
-          &lt;!&ndash;  <img id="photo1" alt="The screen capture will appear in this box.">&ndash;&gt;
-           </div>--></td>
+<td> &nbsp; &nbsp;&nbsp;</td>
+         <td><div class="out">
+            <img id="Green"  style="height:100px;width:120px;">
+           </div></td>
+      <td></td>
+    <td >
+         <div class="category" style="background-color:{{gcategory}}">
+        {{gcategory}}
+      </div>
+
+    </td>
+      <td>&nbsp;&nbsp;&nbsp;</td>
   </tr>
 
   <tr>
@@ -58,21 +83,33 @@
       </td>
     <td>&nbsp;&nbsp;&nbsp; </td>
     <td><button class="w3-button w3-blue" ng-click="blue();move('blueBar')">TRAIN BLUE</button></td>
-   <!-- <td> {{category}}</td>-->
-        <td><!--<div class="output">
-            &lt;!&ndash;<img id="photo" alt="The screen capture will appear in this box.">&ndash;&gt;
-           </div>--></td>
+<td> &nbsp; &nbsp;&nbsp;</td>
+        <td><div class="out">
+            <img id="Blue"  style="height:100px;width:120px;">
+           </div></td>
+      <td></td>
+    <td >
+         <div class="category" style="background-color:{{bcategory}}">
+        {{bcategory}}
+      </div>
+
+    </td>
+      <td>&nbsp;&nbsp;&nbsp;</td>
   </tr>
     <tr >
 
-        <td colspan="7" style="text-align:center;">&nbsp;</td>
+        <td colspan="10" style="text-align:center;">&nbsp;</td>
+
     </tr>
     <tr>
 
-        <td colspan="7" style="text-align:center;"><button class="w3-button w3-grey" ng-click="predictMe()">Predict</button>
+        <td colspan="10" style="text-align:center;"><button class="w3-button w3-light-grey" ng-click="predictMe()">PREDICT</button>
         </td>
+
     </tr>
 </table>
+
+
 
 
 </div>

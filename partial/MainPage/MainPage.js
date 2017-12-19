@@ -9,6 +9,7 @@ $scope.category = '';
   var canvas = null;
   var photo = null;
   var startbutton = null;
+  var valueSet = false;
   var x = 5;
 /*
 
@@ -73,56 +74,7 @@ $scope.predictMe = function(){
        {
         $timeout(countUp, 5000);
 
-       console.log('calling send predictImg')
-        var context = canvas.getContext('2d');
-        var predictList = [];
-        if (width && height) {
-            canvas.width = width;
-            canvas.height = height;
-            context.drawImage(video, 0, 0, width, height);
-            var data = canvas.toDataURL('image/png');
-            // photo.setAttribute('src', data);
-            predictList.push(data)
-
-        //console.log('datafrmPred',data)
-        var dataToSend  = {
-            /*id = "1"*/
-            content : data
-
-        }
-        console.log('calling predict method-----')
-        MainService.predict(dataToSend).then(function (data) {
-            console.log('hooooooooolaaaaaaaaaaaaa');
-           // console.log(data);
-            console.log(data.message.id)
-            if(data.message.id =="0")
-            {
-                 $scope.category = "Red"
-            }
-            if(data.message.id =="1")
-            {
-                 $scope.category = "Green"
-            }
-            if(data.message.id =="2")
-            {
-
-                 $scope.category = "Blue"
-
-            }
-
-           // ngToast.create('Your Profile Has Been Updated!');
-        });
-
-       }
-
-
-
-
-
-
-
-
-}
+      }
 };
 
 
@@ -195,20 +147,7 @@ $scope.green = function () {
         MainService.trainmodel(dataToSend).then(function (data) {
             console.log(data);
             console.log(data.message.id)
-            if(data.message.id =="1")
-            {
-                 $scope.category = "Red"
-            }
-            if(data.message.id =="2")
-            {
-                 $scope.category = "Green"
-            }
-            if(data.message.id =="4")
-            {
-
-                 $scope.category = "None"
-
-            }
+            valueSet = true;
 
            // ngToast.create('Your Profile Has Been Updated!');
         });
@@ -225,7 +164,7 @@ $scope.green = function () {
   console.log('printing category ',$scope.category);
   function frame() {
 /*    if (width >= 100) {*/
-    if ($scope.category !='') {
+    if (valueSet) {
       clearInterval(id);
       elem.style.width = '100' + '%';
       elem.innerHTML = '100' + '%';
@@ -293,16 +232,21 @@ function myLoop () {
             console.log(data.message.id)
             if(data.message.id =="0")
             {
-                 $scope.category = "Red"
+                 $scope.rcategory = "Red"
+                 $scope.gcategory = ""
+                 $scope.bcategory = ""
             }
             else if(data.message.id =="1")
             {
-                 $scope.category = "Green"
+                 $scope.rcategory = ""
+                 $scope.gcategory = "Green"
+                 $scope.bcategory = ""
             }
             else if(data.message.id =="2")
             {
-
-                 $scope.category = "Blue"
+                 $scope.rcategory = ""
+                 $scope.gcategory = ""
+                 $scope.bcategory = "Blue"
 
             }
             else
