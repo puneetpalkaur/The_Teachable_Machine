@@ -62,7 +62,7 @@ keras.preprocessing.image.ImageDataGenerator
  The model performs real well, when used via console. But when it runs with a UI, there is a time lag. As images are being sent to server, this step can be modified to increase performance and make it real time. Right now, user has to wait a few seconds to get prediction/output for the images.
 
 #### Credits:
-A big thanks to  [Joshua Gordon](https://github.com/random-forests) for teaching this amazing course on Machine Learning and Deep Learning!
+A big thanks to Professor [Joshua Gordon](https://github.com/random-forests) for teaching this amazing course on Machine Learning and Deep Learning!
 Thanks to all the developers of API's and dependency files and used in the code.
 
 
