@@ -1,0 +1,79 @@
+<div class="col-md-12" ng-controller="MainpageCtrl">
+<div class="contentarea">
+<table >
+  <tr>
+    <th colspan="2" style="text-align:center;">INPUT</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;</th>
+      <th>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;</th>
+    <th style="text-align:center;">OUTPUT</th>
+
+  </tr>
+  <tr >
+  	<td rowspan="3">
+      <div class="outer-div camera">
+        <video autoplay="true" id="video" class="inner-div"></video>
+          <canvas class="canvas" id="canvas"></canvas>
+
+      </div>
+    </td>
+    <td> &nbsp; &nbsp;&nbsp;</td>
+      <td> <div class="w3-light-grey" style="width:200px">
+            <div id="redBar" class="w3-container w3-red w3-center" style="width:5%">0%</div>
+            </div>
+      </td>
+      <td> &nbsp; &nbsp;&nbsp;</td>
+    <td><button class="w3-button w3-red" ng-click="red();move('redBar');">TRAIN RED</button></td>
+      <td><div class="output">
+            <img id="Red" alt="The screen capture will appear in this box.">
+           </div></td>
+
+    <td rowspan="3">
+         <div class="category" style="background-color:{{category}}">
+        {{category}}
+      </div>
+
+    </td>
+  </tr>
+  <tr >
+      <td> &nbsp; &nbsp;&nbsp;</td>
+      <td> <div class="w3-light-grey">
+            <div id="greenBar" class="w3-container w3-green w3-center" style="width:10%">0%</div>
+            </div>
+      </td>
+    <td>&nbsp;&nbsp;&nbsp; </td>
+    <td><button class="w3-button w3-green" ng-click="green();move('greenBar');">TRAIN GREEN</button></td>
+    <!--<td> {{category}}</td>-->
+        <td><!--<div class="output">
+          &lt;!&ndash;  <img id="photo1" alt="The screen capture will appear in this box.">&ndash;&gt;
+           </div>--></td>
+  </tr>
+
+  <tr>
+      <td> &nbsp; &nbsp;&nbsp;</td>
+      <td> <div class="w3-light-grey">
+            <div id="blueBar" class="w3-container w3-blue w3-center" style="width:10%">0%</div>
+            </div>
+      </td>
+    <td>&nbsp;&nbsp;&nbsp; </td>
+    <td><button class="w3-button w3-blue" ng-click="blue();move('blueBar')">TRAIN BLUE</button></td>
+   <!-- <td> {{category}}</td>-->
+        <td><!--<div class="output">
+            &lt;!&ndash;<img id="photo" alt="The screen capture will appear in this box.">&ndash;&gt;
+           </div>--></td>
+  </tr>
+    <tr >
+
+        <td colspan="7" style="text-align:center;">&nbsp;</td>
+    </tr>
+    <tr>
+
+        <td colspan="7" style="text-align:center;"><button class="w3-button w3-grey" ng-click="predictMe()">Predict</button>
+        </td>
+    </tr>
+</table>
+
+
+</div>
+</div>

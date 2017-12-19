@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html ng-app="TeachableMachine">
+<head>
+  <title></title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta charset="utf-8">
+  <link href="app.less" type="text/css" rel="stylesheet/less">
+</head>
+<body>
+
+  <!-- Livereload script for development only (stripped during dist build) -->
+  <script src="http://localhost:35729/livereload.js" data-concat="false"></script>
+
+  <!-- JS from Bower Components -->
+  <script src="bower_components/less.js/dist/less.js" data-concat="false"></script>
+  <script src="bower_components/jquery/dist/jquery.js"></script>
+  <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
+  <script src="bower_components/lodash/dist/lodash.js"></script>
+  <script src="bower_components/moment/moment.js"></script>
+  <script src="bower_components/angular/angular.js"></script>
+  <script src="bower_components/angular-route/angular-route.js"></script>
+  <script src="bower_components/angular-animate/angular-animate.js"></script>
+  <script src="bower_components/angular-resource/angular-resource.js"></script>
+  <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
+  <!-- Add New Bower Component JS Above -->
+
+
+  <!-- Main App JS -->
+  <script src="app.js"></script>
+  <script src="partial/MainPage/MainPage.js"></script>
+  <script src="service/MainService.js"></script>
+  <!-- Add New Component JS Above -->
+  <script src = "bower_components/file-saver.js/FileSaver.js"></script>
+
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+  <!--<script src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.min.js"></script>-->
+  <div>
+    <div id="content">
+      <div class="row" style="padding:10px;">
+        <div ng-view>
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+</html>
