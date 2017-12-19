@@ -72,7 +72,7 @@ $scope.predictMe = function(){
       console.log('hey, flag has changed!',$scope.flag);
        if(true) //$scope.flag
        {
-        $timeout(countUp, 5000);
+        $timeout(countUp, 3000);
 
       }
 };
@@ -149,7 +149,7 @@ $scope.green = function () {
             console.log(data.message.id)
             valueSet = true;
 
-           // ngToast.create('Your Profile Has Been Updated!');
+
         });
 
 
@@ -160,7 +160,7 @@ $scope.green = function () {
  $scope.move = function (barId){
   var elem = document.getElementById(barId);
   var width = 0;
-  var id = setInterval(frame, 100);
+  var id = setInterval(frame, 1000);
   console.log('printing category ',$scope.category);
   function frame() {
 /*    if (width >= 100) {*/
@@ -177,37 +177,15 @@ $scope.green = function () {
               console.log('setting flag');
                 $scope.flag = true;
                 console.log($scope.flag);
+                valueSet = false;
 
 };
-
-/*function predictImg(){
-
-
-      return data
-
-
-}*/
-/*var i = 0;
-function myLoop () {
-        console.log('added counter',$scope.counter);
-        //  create a loop function
-   setTimeout(function () {    //  call a 3s setTimeout when the loop is called
-      console.log('hello');          //  your code here
-      $scope.counter= $scope.counter+1;
-      console.log('counter increased ',$scope.counter)
-      i++;                     //  increment the counter
-      if (i < 10) {            //  if the counter < 10, call the loop function
-         myLoop();             //  ..  again which will trigger another
-      }                        //  ..  setTimeout()
-   }, 300)
-}*/
-
 
  $scope.timeInMs = 0;
 
     var countUp = function()
     {
-        console.log('laaaaaaaaaaaaa');
+
         console.log('calling send predictImg')
         var context = canvas.getContext('2d');
         var predictList = [];
@@ -259,6 +237,6 @@ function myLoop () {
        }
 
         //$scope.timeInMs+= 500;
-        $timeout(countUp,5000);
+        $timeout(countUp,3000);
     }
 });
