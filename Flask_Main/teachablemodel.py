@@ -57,7 +57,7 @@ def train():
         'C:/Users/Puneet Billing/Desktop/Teachable_Images',  # this is the target directory
         target_size=(150, 150),  # all images will be resized to 150x150
         batch_size=batch_size,
-        class_mode='categorical')  # since we use binary_crossentropy loss, we need binary labels
+        class_mode='categorical')
     ##
     #### this is a similar generator, for validation data
     validation_generator = test_datagen.flow_from_directory(
@@ -92,7 +92,7 @@ def train():
 def predict(imgPath):
     model = load_model('C:/Users/Puneet Billing/Desktop/first_try.h5')
     print('loaded')
-    img = load_img('C:/Users/Puneet Billing/Desktop/Temp/1.png')
+    img = load_img(imgPath)
 
     # print('printing shape here')
 

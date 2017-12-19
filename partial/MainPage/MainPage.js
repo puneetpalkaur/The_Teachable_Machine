@@ -1,7 +1,7 @@
 angular.module('TeachableMachine').controller('MainpageCtrl',function($scope,MainService,$timeout){
 $scope.counter = 1;
 $scope.category = '';
-   var width = 300;    // We will scale the photo width to this
+   var width = 500;    // We will scale the photo width to this
   var height = 0;     // This will be computed based on the input stream
   var streaming = false;
   $scope.flag = false;
@@ -66,13 +66,24 @@ $scope.category = '';
       }
     }, false);
 
+$scope.trainMe = function(){
+console.log('calling trainme')
+  MainService.trainModel().then(function (data) {
+            console.log(data);
+            console.log(data.message.id)
+            valueSet = true;
 
+
+        });
+
+
+}
 /*$scope.$watch('flag', function (newValue, oldValue, scope) {*/
 $scope.predictMe = function(){
       console.log('hey, flag has changed!',$scope.flag);
        if(true) //$scope.flag
        {
-        $timeout(countUp, 3000);
+        $timeout(countUp, 1000);
 
       }
 };
@@ -144,7 +155,7 @@ $scope.green = function () {
 
         }
         console.log('calling sav method')
-        MainService.trainmodel(dataToSend).then(function (data) {
+        MainService.collectImgs(dataToSend).then(function (data) {
             console.log(data);
             console.log(data.message.id)
             valueSet = true;
@@ -160,7 +171,7 @@ $scope.green = function () {
  $scope.move = function (barId){
   var elem = document.getElementById(barId);
   var width = 0;
-  var id = setInterval(frame, 1000);
+  var id = setInterval(frame,2000);
   console.log('printing category ',$scope.category);
   function frame() {
 /*    if (width >= 100) {*/
@@ -237,6 +248,6 @@ $scope.green = function () {
        }
 
         //$scope.timeInMs+= 500;
-        $timeout(countUp,3000);
+        $timeout(countUp,2000);
     }
 });
