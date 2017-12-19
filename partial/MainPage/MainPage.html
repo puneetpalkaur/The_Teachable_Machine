@@ -40,7 +40,7 @@
             </div>
       </td>
       <td> &nbsp; &nbsp;&nbsp;</td>
-    <td><button class="w3-btn w3-ripple w3-red" ng-click="red();move('redBar');">TRAIN RED</button></td>
+    <td><button class="w3-btn w3-ripple w3-red" ng-click="red();move('redBar');">COLLECT RED</button></td>
       <td> &nbsp; &nbsp;&nbsp;</td>
       <td>
             <div class="out">  <img id="Red"  style="height:100px;width:120px;"></div>
@@ -63,7 +63,7 @@
             </div>
       </td>
     <td>&nbsp;&nbsp;&nbsp; </td>
-    <td><button class="w3-btn w3-ripple w3-green" ng-click="green();move('greenBar');">TRAIN GREEN</button></td>
+    <td><button class="w3-btn w3-ripple w3-green" ng-click="green();move('greenBar');">COLLECT GREEN</button></td>
 <td> &nbsp; &nbsp;&nbsp;</td>
          <td><div class="out">
             <img id="Green"  style="height:100px;width:120px;">
@@ -86,7 +86,7 @@
             </div>
       </td>
     <td>&nbsp;&nbsp;&nbsp; </td>
-    <td><button class="w3-btn w3-ripple w3-red" ng-click="blue();move('blueBar')">TRAIN BLUE</button></td>
+    <td><button class="w3-btn w3-ripple w3-red" ng-click="blue();move('blueBar')">COLLECT BLUE</button></td>
 <td> &nbsp; &nbsp;&nbsp;</td>
         <td><div class="out">
             <img id="Blue"  style="height:100px;width:120px;">
@@ -100,15 +100,36 @@
     </td>
       <td>&nbsp;&nbsp;&nbsp;</td>
   </tr>
+    <tr>
+
+        <td colspan="11" style="text-align:center;">
+         &nbsp;&nbsp;&nbsp;
+        </td>
+
+    </tr>
     <tr >
 
-        <td colspan="11" style="text-align:center;">&nbsp;</td>
+        <td>&nbsp;&nbsp;&nbsp;</td>
+        <td colspan="9" style="text-align:center;">
+
+            <div class="w3-light-grey">
+            <div id="trainBar" class="w3-container w3-grey w3-center" style="width:10%">0%</div>
+            </div>
+
+        </td>
+
+    </tr>
+     <tr>
+
+        <td colspan="11" style="text-align:center;">
+         &nbsp;&nbsp;&nbsp;
+        </td>
 
     </tr>
     <tr>
 
         <td colspan="11" style="text-align:center;">
-            <button class="w3-button w3-border w3-border-black w3-light-grey" ng-click="trainMe()">TRAIN</button>
+            <button class="w3-button w3-border w3-border-black w3-light-grey" ng-click="trainMe();move('trainBar')">TRAIN</button>
             <button class="w3-button w3-border w3-border-black w3-light-grey" ng-click="predictMe()">PREDICT</button>
 
         </td>

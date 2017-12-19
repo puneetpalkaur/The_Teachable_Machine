@@ -171,8 +171,7 @@ $scope.green = function () {
  $scope.move = function (barId){
   var elem = document.getElementById(barId);
   var width = 0;
-  var id = setInterval(frame,2000);
-  console.log('printing category ',$scope.category);
+  var id = setInterval(frame,1000);
   function frame() {
 /*    if (width >= 100) {*/
     if (valueSet) {
@@ -242,12 +241,12 @@ $scope.green = function () {
             {
                   $scope.category = "None"
             }
-           // ngToast.create('Your Profile Has Been Updated!');
+
         });
 
        }
 
-        //$scope.timeInMs+= 500;
+
         $timeout(countUp,2000);
     }
 });
