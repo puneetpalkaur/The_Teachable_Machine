@@ -17,3 +17,12 @@ partial.................................Contains HTML, CSS, js (UI)
     /MainPage...........................Main Page on load
         /MainPage.html..................HTML Page
         /MainPage.js....................javascript File
+        /MainPage.less..................CSS file
+service.................................angular services folder
+        /MainService.js.................sends http request to server
+app.less ...............................main app-wide styles
+app.js .................................angular module initialization and route setup
+index.html .............................main HTML file
+bower_component.........................3rd party libraries managed by bower
+node_modules ...........................npm managed libraries used by grunt
+```
