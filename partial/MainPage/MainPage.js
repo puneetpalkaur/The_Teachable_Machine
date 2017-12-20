@@ -11,7 +11,7 @@ $scope.category = '';
   var x = 5;
   video = document.getElementById('video');
   canvas = document.getElementById('canvas');
-  startbutton = document.getElementById('startbutton');
+/*  pred = document.getElementById('toPred');*/
 
 
  navigator.getMedia = ( navigator.getUserMedia ||
@@ -32,7 +32,6 @@ $scope.category = '';
         {
           var vendorURL = window.URL || window.webkitURL;
           video.src = vendorURL.createObjectURL(stream);
-          //console.log('video.src' ,video.src);
         }
         video.play();
       },
@@ -118,7 +117,6 @@ $scope.green = function () {
   }
 
   function takepicture(id) {
-  console.log('calling take picture lalallallaa')
     var context = canvas.getContext('2d');
     var dataList = [];
     console.log('printing width',width)
@@ -213,38 +211,16 @@ $scope.green = function () {
     var countUp = function()
     {
           $timeout(countUp,2000);
-          navigator.getMedia(
-      {
-        video: true,
-        audio: false
-      },
-      function(stream) {
-        if (navigator.mozGetUserMedia)
-        {
-          video.mozSrcObject = stream;
-        }
-        else
-        {
-          var vendorURL = window.URL || window.webkitURL;
-          video.src = vendorURL.createObjectURL(stream);
-
-        }
-        video.play();
-      },
-      function(err) {
-        console.log("An error occured! " + err);
-      }
-    );
         console.log('calling send predictImg')
         var context = canvas.getContext('2d');
-        var predictList = [];
+        //var predictList = [];
         if (width && height) {
             canvas.width = width;
             canvas.height = height;
             context.drawImage(video, 0, 0, width, height);
             var mydata = canvas.toDataURL('image/png');
-
-            predictList.push(mydata)
+            //pred.setAttribute('src', mydata);
+           // predictList.push(mydata)
 
         var dataToSend  = {
 
@@ -277,7 +253,7 @@ $scope.green = function () {
 
 
         });
-
+        //clearphoto();
        }
 
 
