@@ -65,6 +65,12 @@ keras.preprocessing.image.ImageDataGenerator
  ##### Performance:
  The model performs really well, when used via console. But when it runs with a UI, there is a time lag. As images are being sent to server, this step can be modified to increase performance and make it real time. Right now, user has to wait a few seconds to get prediction/output for the input test images.
 
+#### What's next:
+- Figuring a way to temporarily save images instead of passing to server to make it real time.
+- Display the accuracy , like how much confident is the model when it says the output as Red/Green/Blue. Right now the model shows one of the colors for test images that does not belong to any of the three categories (false positives). Need to modify this logic.
+- Training a model to recognize sounds .... sounds fun! 
+
 #### Credits:
 A big thanks to Professor [Joshua Gordon](https://github.com/random-forests) for teaching this amazing course on Machine Learning and Deep Learning!
+
 Thanks to all the developers for the APIs and dependency files that are used in this code.
