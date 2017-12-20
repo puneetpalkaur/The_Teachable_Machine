@@ -35,11 +35,14 @@ This project showcase use of image classification models to classify new images,
 * Number of Validation Images per Category: 30
 
 For front end , I am using a simple Angular framework. 
+![Alt text](/sh.png?raw=true "Title")
+
 
 #### Considerations:
 
  ##### Extract frames : 
  Frames are being extracted from webcam stream using javascript API 
+ 
 
 ```sh
 navigator.getUserMedia()
