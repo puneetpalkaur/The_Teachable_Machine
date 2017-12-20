@@ -1,24 +1,17 @@
 angular.module('TeachableMachine').controller('MainpageCtrl',function($scope,MainService,$timeout){
-$scope.counter = 1;
 $scope.category = '';
-   var width = 500;    // We will scale the photo width to this
-  var height = 0;     // This will be computed based on the input stream
+   var width = 500;
+  var height = 0;
   var streaming = false;
   $scope.flag = false;
   var video = null;
   var canvas = null;
   var photo = null;
-  var startbutton = null;
   var valueSet = false;
   var x = 5;
-/*
-
-    $scope.$watch($scope.flag, function() {
-        console.log('hey, flag has changed!',$scope.flag);
-    });*/
-     video = document.getElementById('video');
-    canvas = document.getElementById('canvas');
-    startbutton = document.getElementById('startbutton');
+  video = document.getElementById('video');
+  canvas = document.getElementById('canvas');
+  startbutton = document.getElementById('startbutton');
 
 
  navigator.getMedia = ( navigator.getUserMedia ||
@@ -78,9 +71,9 @@ console.log('calling trainme')
 
 
 }
-/*$scope.$watch('flag', function (newValue, oldValue, scope) {*/
+
 $scope.predictMe = function(){
-      console.log('hey, flag has changed!',$scope.flag);
+
        if(true) //$scope.flag
        {
         $timeout(countUp, 2000);
@@ -91,7 +84,6 @@ $scope.predictMe = function(){
 
  $scope.red = function () {
 
-console.log('i am red rrrrrrrrrrrrrrr')
     $scope.photo = "Red";
 
     photo = document.getElementById("Red");
@@ -114,8 +106,7 @@ $scope.green = function () {
     console.log('i am blue')
     takepicture("3");
    };
-  // Fill the photo with an indication that none has been
-  // captured.
+
 
   function clearphoto() {
     var context = canvas.getContext('2d');
@@ -127,7 +118,6 @@ $scope.green = function () {
   }
 
   function takepicture(id) {
-  $scope.category = '';
   console.log('calling take picture lalallallaa')
     var context = canvas.getContext('2d');
     var dataList = [];
@@ -146,7 +136,7 @@ $scope.green = function () {
       photo.setAttribute('src', data);
       dataList.push(data)
     }
-   // photo.setAttribute('src', data);
+
     console.log('befr calling sav method')
 
     var dataToSend  = {
@@ -175,7 +165,7 @@ $scope.green = function () {
   var width = 0;
   var id = setInterval(frame,80);
   function frame() {
-/*    if (width >= 100) {*/
+
     if (valueSet) {
       clearInterval(id);
       elem.style.width = '100' + '%';
@@ -197,7 +187,7 @@ $scope.green = function () {
   var width = 0;
   var id = setInterval(frame,2000);
   function frame() {
-/*    if (width >= 100) {*/
+
     if (valueSet) {
       clearInterval(id);
       elem.style.width = '100' + '%';
@@ -237,7 +227,7 @@ $scope.green = function () {
         {
           var vendorURL = window.URL || window.webkitURL;
           video.src = vendorURL.createObjectURL(stream);
-          //console.log('video.src' ,video.src);
+
         }
         video.play();
       },
@@ -253,20 +243,17 @@ $scope.green = function () {
             canvas.height = height;
             context.drawImage(video, 0, 0, width, height);
             var mydata = canvas.toDataURL('image/png');
-            // photo.setAttribute('src', data);
+
             predictList.push(mydata)
 
-        //console.log('datafrmPred',data)
         var dataToSend  = {
-            /*id = "1"*/
+
             content : mydata
 
         }
         console.log('calling predict method-----')
         MainService.predict(dataToSend).then(function (sdata) {
 
-            console.log('hooooooooolaaaaaaaaaaaaa');
-            console.log(sdata);
             console.log(sdata.message.id)
             if(sdata.message.id =="0")
             {
@@ -287,10 +274,7 @@ $scope.green = function () {
                  $scope.bcategory = "Blue"
 
             }
-            else
-            {
-                  $scope.category = "None"
-            }
+
 
         });
 
