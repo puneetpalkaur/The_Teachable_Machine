@@ -35,7 +35,7 @@ This project showcase use of image classification models to classify new images,
 * Number of Validation Images per Category: 30
 
 For front end , I am using a simple Angular framework. 
-![Alt text](cs632_Final_Project_TeachableMachine/sh.PNG "Title")
+![alt text](https://github.com/pk60313n/cs632_Final_Project_TeachableMachine/blob/master/sh.PNG)
 
 
 #### Considerations:
